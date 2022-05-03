@@ -32,8 +32,8 @@ namespace TweenComponentSystem
 
         public TweenKey tweenKey;
 
-        internal bool doRun;
-        internal bool doRevertRun;
+        private bool doRun;
+        private bool doRevertRun;
 
         private float percentageDuration;
 
@@ -121,6 +121,9 @@ namespace TweenComponentSystem
         public void SetRevertDuration(float value) => revertDuration = value;
         public void SetDODelay(float value) => doDelay = value;
         public void SetRevertDelay(float value) => revertDelay = value;
+        public void SetDOEase(int index) => doEase = (Ease)index;
+        public void SetRevertEase(int index) => revertEase = (Ease)index;
+        public void SetLoopType(int index) => loopType = (LoopType)index;
         #endregion
 
         public bool IsTweening()
@@ -151,7 +154,7 @@ namespace TweenComponentSystem
         }
         public virtual void ResetDO() { }
         public virtual void Kill() { }
-        public virtual void Pause() 
+        public virtual void Pause()
         {
             if (tween == null) return;
 
@@ -160,7 +163,7 @@ namespace TweenComponentSystem
                 c_Transform.DOPause();
             }
         }
-        public virtual void Play() 
+        public virtual void Play()
         {
             if (tween == null) return;
 
