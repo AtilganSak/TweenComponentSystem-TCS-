@@ -133,7 +133,8 @@ namespace TweenComponentSystem
                             if (DOTween.IsTweening(sourceImage))
                                 sourceImage.DOKill(true);
                         }
-                        tween = sourceImage.DOColor(startColor, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = sourceImage.DOColor(startColor, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay? revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                         base.DORevert();
                     }
                     else
@@ -158,7 +159,8 @@ namespace TweenComponentSystem
                             if (DOTween.IsTweening(sourceSprite))
                                 sourceSprite.DOKill(true);
                         }
-                        tween = sourceSprite.DOColor(startColor, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = sourceSprite.DOColor(startColor, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                         base.DORevert();
                     }
                     else
@@ -183,7 +185,8 @@ namespace TweenComponentSystem
                             if (DOTween.IsTweening(sourceMaterial))
                                 sourceMaterial.DOKill(true);
                         }
-                        tween = sourceMaterial.DOColor(startColor, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = sourceMaterial.DOColor(startColor, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                         base.DORevert();
                     }
                     else

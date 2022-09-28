@@ -117,16 +117,16 @@ namespace TweenComponentSystem
                     switch (lookAt)
                     {
                         case LookAt.LookAhead:
-                            tween = c_Transform.DOPath(positions.Reverse().ToArray(), revertDuration, pathType, pathMode, resolution, gizmoColor).
-                        SetEase(twoEase ? revertEase : doEase).SetDelay(revertDelay).SetLookAt(lookAhead).OnComplete(() => doRevertComplete.Invoke());
+                            tween = c_Transform.DOPath(positions.Reverse().ToArray(), twoDuration ? revertDuration : doDuration, pathType, pathMode, resolution, gizmoColor).
+                        SetEase(twoEase ? revertEase : doEase).SetDelay(twoDelay ? revertDelay : doDelay).SetLookAt(lookAhead).OnComplete(() => doRevertComplete.Invoke());
                             break;
                         case LookAt.LookAtTransform:
-                            tween = c_Transform.DOPath(positions.Reverse().ToArray(), revertDuration, pathType, pathMode, resolution, gizmoColor).
-                        SetEase(twoEase ? revertEase : doEase).SetDelay(revertDelay).SetLookAt(lookAtTransform).OnComplete(() => doRevertComplete.Invoke());
+                            tween = c_Transform.DOPath(positions.Reverse().ToArray(), twoDuration ? revertDuration : doDuration, pathType, pathMode, resolution, gizmoColor).
+                        SetEase(twoEase ? revertEase : doEase).SetDelay(twoDelay ? revertDelay : doDelay).SetLookAt(lookAtTransform).OnComplete(() => doRevertComplete.Invoke());
                             break;
                         case LookAt.LookAtPosition:
-                            tween = c_Transform.DOPath(positions.Reverse().ToArray(), revertDuration, pathType, pathMode, resolution, gizmoColor).
-                        SetEase(twoEase ? revertEase : doEase).SetDelay(revertDelay).SetLookAt(lookAtPosition).OnComplete(() => doRevertComplete.Invoke());
+                            tween = c_Transform.DOPath(positions.Reverse().ToArray(), twoDuration ? revertDuration : doDuration, pathType, pathMode, resolution, gizmoColor).
+                        SetEase(twoEase ? revertEase : doEase).SetDelay(twoDelay ? revertDelay : doDelay).SetLookAt(lookAtPosition).OnComplete(() => doRevertComplete.Invoke());
                             break;
                     }
                 }

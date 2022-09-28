@@ -160,7 +160,8 @@ namespace TweenComponentSystem
                             if (DOTween.IsTweening(sourceImage))
                                 sourceImage.DOKill(true);
                         }
-                        tween = sourceImage.DOFade(startValue, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = sourceImage.DOFade(startValue, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ?  revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                         base.DORevert();
                     }
                     else
@@ -185,7 +186,8 @@ namespace TweenComponentSystem
                             if (DOTween.IsTweening(sourceCanvasGroup))
                                 sourceCanvasGroup.DOKill(true);
                         }
-                        tween = sourceCanvasGroup.DOFade(startValue, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = sourceCanvasGroup.DOFade(startValue, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                         base.DORevert();
                     }
                     else
@@ -208,7 +210,8 @@ namespace TweenComponentSystem
                             if (DOTween.IsTweening(sourceSprite))
                                 sourceSprite.DOKill(true);
                         }
-                        tween = sourceSprite.DOFade(startValue, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = sourceSprite.DOFade(startValue, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                         base.DORevert();
                     }
                     else
@@ -233,7 +236,8 @@ namespace TweenComponentSystem
                             if (DOTween.IsTweening(sourceMaterial))
                                 sourceMaterial.DOKill(true);
                         }
-                        tween = sourceMaterial.DOFade(startValue, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = sourceMaterial.DOFade(startValue, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                         base.DORevert();
                     }
                     else

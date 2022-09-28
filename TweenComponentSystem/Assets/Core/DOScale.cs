@@ -39,7 +39,7 @@ namespace TweenComponentSystem
                     if (DOTween.IsTweening(c_Transform))
                         c_Transform.DOKill(true);
                 }
-                tween = c_Transform.DOScale(startValue, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                tween = c_Transform.DOScale(startValue, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
 
                 base.DORevert();
             }

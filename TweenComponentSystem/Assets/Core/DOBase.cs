@@ -314,7 +314,14 @@ namespace TweenComponentSystem
             {
                 Kill();
             }
-            bool isPLaying = tween == null ? false : tween.IsPlaying();
+            bool isPLaying = false;
+            if (tween == null)
+                isPLaying = false;
+            else
+            {
+                if (tween.IsActive())
+                    isPLaying = tween.IsPlaying();
+            }
             if (GUILayout.Button(isPLaying ? "PAUSE" : "PLAY"))
             {
                 if (isPLaying)

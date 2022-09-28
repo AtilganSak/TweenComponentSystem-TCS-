@@ -79,16 +79,20 @@ namespace TweenComponentSystem
                 if (useStartTarget)
                 {
                     if (!local)
-                        tween = c_Transform.DOMove(startTarget.position, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = c_Transform.DOMove(startTarget.position, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                     else
-                        tween = c_Transform.DOLocalMove(startTarget.localPosition, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = c_Transform.DOLocalMove(startTarget.localPosition, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                 }
                 else
                 {
                     if (!local)
-                        tween = c_Transform.DOMove(startValue, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = c_Transform.DOMove(startValue, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                     else
-                        tween = c_Transform.DOLocalMove(startValue, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                        tween = c_Transform.DOLocalMove(startValue, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).
+                            SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                 }
                 base.DORevert();
             }

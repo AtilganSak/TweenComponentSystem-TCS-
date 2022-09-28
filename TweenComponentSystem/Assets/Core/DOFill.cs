@@ -50,7 +50,7 @@ namespace TweenComponentSystem
                     if (DOTween.IsTweening(sourceImage))
                         sourceImage.DOKill(true);
                 }
-                tween = sourceImage.DOFillAmount(startValue, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                tween = sourceImage.DOFillAmount(startValue, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                 base.DORevert();
             }
             else

@@ -53,9 +53,9 @@ namespace TweenComponentSystem
                         c_TransformRect.DOKill();
                 }
                 if (useStartTarget)
-                    tween = c_TransformRect.DOAnchorPos(startTarget.anchoredPosition, doDuration).SetDelay(doDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doComplete.Invoke());
+                    tween = c_TransformRect.DOAnchorPos(startTarget.anchoredPosition, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doComplete.Invoke());
                 else
-                    tween = c_TransformRect.DOAnchorPos(startValue, doDuration).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                    tween = c_TransformRect.DOAnchorPos(startValue, twoDuration ? revertDuration : doDuration).SetDelay(twoDelay ? revertDelay : doDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
 
                 base.DORevert();
             }

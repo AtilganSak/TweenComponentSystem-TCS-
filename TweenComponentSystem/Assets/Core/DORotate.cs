@@ -46,9 +46,9 @@ namespace TweenComponentSystem
                         c_Transform.DOKill(true);
                 }
                 if (!local)
-                    tween = c_Transform.DORotate(startValue, doDuration, rotateMode).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                    tween = c_Transform.DORotate(startValue, twoDuration ? revertDuration : doDuration, rotateMode).SetDelay(twoDelay ? revertDelay : doDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
                 else
-                    tween = c_Transform.DOLocalRotate(startValue, doDuration, rotateMode).SetDelay(revertDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
+                    tween = c_Transform.DOLocalRotate(startValue, twoDuration ? revertDuration : doDuration, rotateMode).SetDelay(twoDelay ? revertDelay : doDelay).SetEase(twoEase ? revertEase : doEase).OnComplete(() => doRevertComplete.Invoke());
 
                 base.DORevert();
             }
